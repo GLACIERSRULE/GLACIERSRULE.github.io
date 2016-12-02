@@ -5,7 +5,7 @@ var stanzas = allText.split("\n\n");//Splits into stanzas at periods
 var lines = allText.split("\n");
 
 // Gets user responses, and makes them into something printable.
-global var response = [];
+var response = [];
 for (var i =0; i <= stanzas.length - 5; i++) { // Propmts out each line
 	response[i] = prompt(stanzas[i]);}
 var Wittenpoem;
