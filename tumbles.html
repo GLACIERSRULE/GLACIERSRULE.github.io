@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tumbles</title>
+	<script type="text/javascript">
+	WestonPoem = readTextFile(tumbles.txt);
+poem = readTextFile(tumbles.txt);
+var myPoem = document.getElementById("myPoem");
+myPoem.innerHTML = WestonPoem;
+
+		//This function gets the full text of the poem from the text file
+ function readTextFile(file)
+{
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+               allText = rawFile.responseText;
+              
+            }
+        }
+    }
+    rawFile.send(null);
+    return(allText);
+}
+	</script>
+</head>
+<body>
+<div id="myPoem"> </div>
+</body>
+</html>
