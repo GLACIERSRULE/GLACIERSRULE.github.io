@@ -2,9 +2,9 @@ var allText; // filled in readTextFile with the full text of the file.
 readTextFile("tumbles.txt");
 var lines = allText.split("\n");
 // Turns Poem back into something printable
-var WestonPoem;
+var WestonPoem = "";
 for (var i = 0  ; i <= lines.length - 1; i++) {
-	WestonPoem = WestonPoem + '<br/>' +'<br/>'+ lines[i];
+	WestonPoem = WestonPoem +'<br/>'+ lines[i];
 }
 
 // Writing the web page:
