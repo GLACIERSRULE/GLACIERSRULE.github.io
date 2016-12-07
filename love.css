@@ -1,2 +1,2 @@
-#poem {background-color: rgba(42,42,42,.7); max-width: 800px;}
-#prose {background-color: rgba(142,42,42,0.7);max-width: 1000px}
+.poem {background-color: rgba(42,42,42,.7); max-width: 800px;}
+.prose {background-color: rgba(142,42,42,0.7);max-width: 1000px}
