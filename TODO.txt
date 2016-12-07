@@ -1,2 +1,2 @@
-1. Finish the love poem. Fix the formatting.
+1. Finish the love poem.
 2. Do js to create and update a text file or cookie to accrue all of the imputs from prompts and submits.
