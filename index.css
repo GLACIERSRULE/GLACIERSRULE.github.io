@@ -79,9 +79,9 @@ body {background-color: rgba(180,150,169,1);}
  
  /* TODO::: Right now none of these delays work*/
 .delayOne {
-	-webkit-animation-delay: 0, .5s;
-	-moz-animation-delay: 0, .5s;
-	animation-delay: 0, .5s;
+	-webkit-animation-delay: 0, 15s;
+	-moz-animation-delay: 0, 15s;
+	animation-delay: 0, 15s;
 }
 
 .delayTwo {
