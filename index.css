@@ -65,18 +65,19 @@ body {background-color: rgba(180,150,169,1);}
 
 .quickFade {
     -webkit-animation-name: reset, fade-in;
-    -webkit-animation-duration: 2.5s;
+    -webkit-animation-duration: 15s;
     -webkit-animation-timing-function: ease-in;
 	
 	-moz-animation-name: reset, fade-in;
-    -moz-animation-duration: 2.5s;
+    -moz-animation-duration: 15s;
     -moz-animation-timing-function: ease-in;
 	
 	animation-name: reset, fade-in;
-    animation-duration: 2.5s;
+    animation-duration: 15s;
     animation-timing-function: ease-in;
 }
  
+ /* TODO::: Right now none of these delays work*/
 .delayOne {
 	-webkit-animation-delay: 0, .5s;
 	-moz-animation-delay: 0, .5s;
