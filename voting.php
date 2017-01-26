@@ -9,7 +9,7 @@
 		First Person <input type="range" name="first" min="0" max="3">
 		Second <input type="range" name="second" min="0" max="3">
 		Third <input type="range" name="third" min="0" max="3">
-		 <input type="submit">
+		<input type="submit">
 	</form>
 </body>
 </html>
