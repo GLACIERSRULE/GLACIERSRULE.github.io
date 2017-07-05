@@ -1,0 +1,142 @@
+<html>
+<head>
+<title>MOVING</title>
+<link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+<style>
+body { font-family: 'Crimson Text', Calibri, sans-serif; }
+svg { border: solid #ccc 1px; }
+text { cursor: pointer; }
+
+</style>
+<body>
+<svg id="first" height="600" width = "600"></svg>
+<script type="text/javascript">
+//SVG stuff
+var height = 600;
+var width = 600;
+var padding = 80;
+//Text importing stuff
+var allText;
+var fulltext = readTextFile("moving.txt");
+var wordsTxt = allText.split(/[\n ,]+/);
+linesTxt = allText.split(/[\n]+/);
+// Making different random Node configurations
+var wordNodes = [];
+wordsTxt.forEach(function(d,i){
+	wordNodes.push({x: i,y:i, txt: d, id: i})
+})
+var newIndNodes = [];
+	for (var i = 0; i < wordNodes.length; i++) {
+		newIndNodes.push({x: 1, y: wordNodes[i].y,txt:wordNodes[i].txt, id:i});
+	}
+//Scales
+var xScaleLine = d3.scaleLinear()
+.domain([0, wordNodes.length])
+.range([0, width - padding]);
+var yScaleLine = d3.scaleLinear()
+.domain([-1, wordNodes.length-1])
+.range([ 0,height]);
+// Adding text
+var clickCounter = 0;
+var svg = d3.select("svg")
+words = svg.selectAll("text").data(wordNodes).enter().append("text")
+	.attr("x", function(d){return xScaleLine(d.x);})
+	.attr("y", function(d){return yScaleLine(d.y);})
+	.text(function(d){ return d.txt;});
+svg.on("click",clickFunction );
+
+
+
+/*var simulation = d3.forceSimulation();
+// Add forces here:
+simulation.force("center", d3.forceCenter(xScale(0),yScale(0))); // First thing
+simulation.force("allignX", d3.forceX().x(function(d){return xScale(d.a);})); // second
+simulation.force("allignY", d3.forceY().y(function(d){return yScale(0);})); // second
+simulation.force("repel", d3.forceManyBody().strength(15))
+simulation.force("link", d3.forceLink().id(function(d){return d.id;}));// third
+simulation.force("collide", d3.forceCollide().radius(function(d){return rScale(d.b);}));
+// Set simulation properties
+simulation.nodes(nodes).on("tick", updateDisplay);
+simulation.force("link").links(edges); // third*/
+function randomizeIndexes(nodes){
+	var randomizedY = [];
+	
+	var yValues = nodes.map(function (d) { return d.y; });
+	d3.shuffle(yValues);
+	console.log(yValues);
+	// How do we randomize the y values?
+	for (var i = 0; i < nodes.length; i++) {
+		randomizedY.push({"x": nodes[i].x, "y": yValues[i],"txt":nodes[i].txt, "id":i});
+	}
+	return randomizedY;
+}
+
+function clickFunction(){
+	if ((clickCounter%2)== 0) {
+		words.data(randomizeIndexes(wordNodes)).transition().duration(1500)
+		.attr("x", function(d){return xScaleLine(d.x);}).attr("y", function(d){return yScaleLine(d.y);})
+	}else if (clickCounter==1){
+		words.data(newIndNodes).transition().duration(1500)
+		.attr("x", function(d){return xScaleLine(d.x);}).attr("y", function(d){return yScaleLine(d.y);})
+	}
+	clickCounter = clickCounter+1;
+	console.log(clickCounter);
+	
+}
+function changeX(node,value){node.x = value;}
+function changeY(node,value){node.y = value;}
+
+
+function readTextFile(file){
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+               allText = rawFile.responseText;
+              
+            }
+        }
+    }
+    rawFile.send(null);
+    return(allText);
+}
+
+
+
+// Add click/drag functions
+// From https://bl.ocks.org/mbostock/2675ff61ea5e063ede2b5d63c08020c7
+/*circles
+.call(d3.drag()
+.on("start", dragstarted)
+.on("drag", dragged)
+.on("end", dragended));
+
+function dragstarted(d) {
+	if (!d3.event.active) { simulation.alphaTarget(0.3).restart() };
+	d.fx = d.x;
+	d.fy = d.y;
+}
+
+function dragged(d) {
+	d.fx = d3.event.x;
+	d.fy = d3.event.y;
+}
+
+function dragended(d) {
+	if (!d3.event.active) { simulation.alphaTarget(0) };
+	d.fx = null;
+	d.fy = null;
+}*/
+
+</script>
+
+</body>
+</head>
+</html>
