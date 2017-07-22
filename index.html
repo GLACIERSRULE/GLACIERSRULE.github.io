@@ -11,7 +11,34 @@
 </head>
 <body>
 <script type="text/javascript">
-	
+	var person = prompt("Please enter your name", "Name");
+
+	if (person == null || person == "") {
+    	txt = "User cancelled the prompt.";
+	} else {
+    	txt = "Hello " + person + "! How are you today?";
+    	document.cookie = "username = "+person;
+	} 
+	alert("hello "+getCookie("username")+" Welcome to my poetry place");
+	alert("I'm Thrilled you've chosen to learn more about me.")
+	alert("Come hang out!")
+
+//This funciton from W3 school online thing: www.w3schools.com/js/js_cookies.asp
+	function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
 </script>
 <header>
 	<h1 class="quickFade delayFive">This is the centroid </h1>

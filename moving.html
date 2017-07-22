@@ -19,28 +19,38 @@ var height = 600;
 var width = 600;
 var padding = 80;
 //Text importing stuff
-var allText;
+/*var allText;
 var fulltext = readTextFile("moving.txt");
 var wordsTxt = allText.split(/[\n ,]+/);
-linesTxt = allText.split(/[\n]+/);
+linesTxt = allText.split(/[\n]+/);*/
+var wordNodes;
+var clickCounter = 0;
+var newIndNodes = [];
+var words;
+
+d3.csv("moving.csv",function(data){
+	console.log(data);
+	wordNodes= data;
+	//making random nodes
+		for (var i = 0; i < wordNodes.length; i++) {
+			newIndNodes.push({x: 1, y: wordNodes[i].y,txt:wordNodes[i].txt, id:i});
+		}
+
 // Making different random Node configurations
-var wordNodes = [];
+/*var wordNodes = [];
 wordsTxt.forEach(function(d,i){
 	wordNodes.push({x: i,y:i, txt: d, id: i})
-})
-var newIndNodes = [];
-	for (var i = 0; i < wordNodes.length; i++) {
-		newIndNodes.push({x: 1, y: wordNodes[i].y,txt:wordNodes[i].txt, id:i});
-	}
+})*/
 //Scales
 var xScaleLine = d3.scaleLinear()
-.domain([0, wordNodes.length])
+.domain([0, d3.max(wordNodes,function(d){return +d.x;})])
 .range([0, width - padding]);
 var yScaleLine = d3.scaleLinear()
-.domain([-1, wordNodes.length-1])
+.domain([0, d3.max(wordNodes,function(d){return +d.y;})])
 .range([ 0,height]);
+
 // Adding text
-var clickCounter = 0;
+
 var svg = d3.select("svg")
 words = svg.selectAll("text").data(wordNodes).enter().append("text")
 	.attr("x", function(d){return xScaleLine(d.x);})
@@ -61,6 +71,7 @@ simulation.force("collide", d3.forceCollide().radius(function(d){return rScale(d
 // Set simulation properties
 simulation.nodes(nodes).on("tick", updateDisplay);
 simulation.force("link").links(edges); // third*/
+});
 function randomizeIndexes(nodes){
 	var randomizedY = [];
 	
@@ -75,10 +86,21 @@ function randomizeIndexes(nodes){
 }
 
 function clickFunction(){
-	if ((clickCounter%2)== 0) {
+	//Scales
+	var xScaleLine = d3.scaleLinear()
+		.domain([0, d3.max(wordNodes,function(d){return d.x})])
+		.range([0, width - padding]);
+	var yScaleLine = d3.scaleLinear()
+		.domain([-1, d3.max(wordNodes,function(d){return d.y})-1])
+		.range([ 0,height]);
+	//Changing stuff
+	if (clickCounter==0){
+		words.data(wordNodes).transition().duration(1500)
+		.attr("x", function(d){return xScaleLine(d.x2);}).attr("y", function(d){return yScaleLine(d.y2);})
+	}else if ((clickCounter%2)== 0) {
 		words.data(randomizeIndexes(wordNodes)).transition().duration(1500)
 		.attr("x", function(d){return xScaleLine(d.x);}).attr("y", function(d){return yScaleLine(d.y);})
-	}else if (clickCounter==1){
+	}else if (clickCounter==2){
 		words.data(newIndNodes).transition().duration(1500)
 		.attr("x", function(d){return xScaleLine(d.x);}).attr("y", function(d){return yScaleLine(d.y);})
 	}
