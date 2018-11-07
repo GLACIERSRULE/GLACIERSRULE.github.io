@@ -1,16 +1,21 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>GLACIERS RULE</title>
-	<meta name="viewport" content="width=device-width"/>
+	<title>My First Boostap Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 	<link rel="stylesheet" type="text/css" href="index.css">
+	<!-- BOOTSTRAP FRAMEWORK CDN - bootstrap is a mobile friendly framework to make cleaner pages. When looking up things you want to do with this webpage look up Bootstrap along with what you want to do. A basic tutorial can be found at https://www.w3schools.com/Bootstrap/default.asp -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 	<!-- needed for fade-->
 	<link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700|Lato:400,300' rel='stylesheet' type='text/css'>
 
 	<script type="text/javascript" src= "index.js" ></script>
 </head>
 <body>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	var person = prompt("Please enter your name", "Name");
 
 	if (person == null || person == "") {
@@ -20,8 +25,7 @@
     	document.cookie = "username = "+person;
 	} 
 	alert("hello "+getCookie("username")+" Welcome to my poetry place");
-	alert("I'm Thrilled you've chosen to learn more about me.")
-	alert("Come hang out!")
+	alert("I think its neat that you want to read my terrible poetry! Any helpful suggestions/criticisms are greatly appreciated!")
 
 //This funciton from W3 school online thing: www.w3schools.com/js/js_cookies.asp
 	function getCookie(cname) {
@@ -39,22 +43,51 @@
     }
     return "";
 }
-</script>
+</script> -->
 <header>
-	<h1 class="quickFade delayFive">This is the centroid </h1>
+	<div class="jumbotron text-center quickFade delayFive">
+		<h1> Writings by Anne </h1>
+		<p>This is pretty much entirely projects I am still working on and learning about,, they are published bc realistically I'll never finish them... and i kinda want to be an "artist"</p>
+		<p>This looks like a scattershot of different html bullshit because I want to be able to use html as a poetic language one day, and I need to get the feel for it to do that</p>
+	</div>
 </header>
-	<h2>Click on these links to read some poems</h2>
-	<!-- Remember to make many and randomize these links -->
-	<a id = "shelterlink" href="shelter.html" target="_self">p</a>
-	<a id = "meadowlink" href="Meadow.html" target="_self">q</a>
-	<a href="tumbles.html" target="_self"> d</a>
-	<a href="love.html" target="_self"> g</a>
-	
+<nav class="navbar  bg-dark navbar-dark"> <!-- navbar-expand-lg -->
+	<a class="navbar-brand" href="#">
+    <img src="circleA.svg" alt="Logo" style="width:40px;">
+  </a>
+  <ul class="navbar-nav">
+  	<li class="nav-item">
+  		<a class="nav-link" href="">Other's Art I like a lot!</a>
+  	</li>
+  </ul>
+
+  <!-- Collapsable Stuff -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+	<ul class="navbar-nav">
+		<li class="nav-item">
+			<a class="nav-link" href="moving.html">Moving</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="metalShow.html">Metal Show</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="shelter.html">Shelter</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="love.html">Neo-Love</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="erasure.html">Erasure Poem</a>
+		</li>
+	</ul>
+  </div>
+</nav>
 
 
-
-
-<article class="quickFade delayOne">
+<article class="quickFade delayFive">
 	<h2>Explanation of purpose:</h2>
 	<p>the mold form fits and falters <br/>  breaking through to truther taunters <br/>  each old storm sits and saunters <br/> regimented platooned stuck to sauluter <br/>  so our retreat is no longer refusal <br/> the only way out is upward <br/>  through liasons legions stand up <br/>  no longer dedicated to our survival <br/> no longer caught by your "revival" <br/>  induvidualism won't save us <br/>  herd stampede only berate us</p>
 	<h3>Sagging storm raging <br/> pleasing the spacious <br/> tracks and sword satiating</h3>
