@@ -1,2 +1,5 @@
 1. Finish the love poem.
 2. Do js to create and update a text file or cookie to accrue all of the imputs from prompts and submits.
+3. NETOWRK POEM WHERE YOU CAN CREATE A LINKED LIST POEM FROM AN SVG THING
+4. FINISH LOTS OF STUFF
+5. MAKE A SONG FOR METAL SHOW
