@@ -20,14 +20,14 @@ class App extends Component {
       
         <header className="App-header">
           <p>
-            Sweet loaf what have you done...
+            Sweet loaf what have you done... <br />
+            Wanna know a secret? 
           </p>
           <div>
-        Wanna know a secret? <br/>
-        <button onClick={this._showMessage.bind(null, true)}>show</button>
-        <button onClick={this._showMessage.bind(null, false)}>hide</button>
-        { this.state.showMessage && (<div>I love you</div>) }
-      </div>
+            <button onClick={this._showMessage.bind(null, true)}>show</button>
+            <button onClick={this._showMessage.bind(null, false)}>hide</button>
+            { this.state.showMessage && (<div>I love you</div>) }
+          </div>
         </header>
 
       </div>
