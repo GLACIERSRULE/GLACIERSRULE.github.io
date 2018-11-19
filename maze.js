@@ -1,4 +1,9 @@
 'use strict';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App.jsx';
+import Home from './Home.jsx';
+import { Router, Route, Link, browserHistory, IndexRoute  } from 'react-router';
 
 const leftNode = new Node("second", "second Irght",null,null);
   const rightNode = new Node("Rsecond", "RRsecond Irght",null,null);
