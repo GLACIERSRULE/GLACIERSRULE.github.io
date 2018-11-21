@@ -21,4 +21,4 @@ class Lines extends React.Component {
     );
   }
 }
-export default Maze;
+export default Lines;

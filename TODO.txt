@@ -1,5 +1,9 @@
 1. Finish the love poem.
-2. Do js to create and update a text file or cookie to accrue all of the imputs from prompts and submits.
-3. NETOWRK POEM WHERE YOU CAN CREATE A LINKED LIST POEM FROM AN SVG THING
+3. Finishing maze app
+	- Get the title to disappear
+	- get it to work at all
+	- json for nodes?
 4. FINISH LOTS OF STUFF
 5. MAKE A SONG FOR METAL SHOW
+6. I LOVE YOU LOAF
+9. change the theme of the index

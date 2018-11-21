@@ -5,15 +5,26 @@
 	<link rel="stylesheet" type="text/css" href="index.css">
 	<!-- needed for fade-->
 	<link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700|Lato:400,300' rel='stylesheet' type='text/css'>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("button").click(function(){
+        $("#div1").fadeIn(3000);
+        $("#div2").fadeIn(8000);
+        $("#div3").fadeIn(30000);
+        $("#div4").fadeIn(100000);
+    });
+});
+</script>
 </head>
 <body>
 <audio src="audio/HowItWorks.mp3" loop autoplay>
 Error: your web browser does not support this audio player.
 </audio>
-
-<div class="delayOne quickFade ">I GOT WHAT I DESERVED</div>
-<div class=" delayTwo quickFade ">LIVING IN MY HEAD</div>
-<div class="quickFade delayThree">ILL STAY HERE TILL I ROT</div>
-<div class="quickFade delayFour">CAUSE I CANT ESCAPE IT</div>
+<button> THERE IS AUDIO - CLICK TO SEE THE POEM</button> <br><br>
+<div id="div1" style="display:none;">I GOT WHAT I DESERVED</div>
+<div id="div2" style="display:none;">LIVING IN MY HEAD</div>
+<div id="div3" style="display:none;">ILL STAY HERE TILL I ROT</div>
+<div id="div4" style="display:none;">CAUSE I CANT ESCAPE IT</div>
 </body>
 </html>
