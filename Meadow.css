@@ -1,2 +1,3 @@
-body{ background-color: rgba(100,166,80,1); }
-.Poem{background-color: rgba(80,80,80,.5); max-width: 35%}
+body{ background-color: rgb(126, 62, 25) !important;
+    background-image: none; }
+.Poem{background-color: rgba(17, 122, 31, 0.685);}
