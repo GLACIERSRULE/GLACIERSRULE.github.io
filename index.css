@@ -1,5 +1,6 @@
 body {background-color: rgba(180,150,169,1);}
-
+.collab {background: rgba(255,188,169,1)}
+.info { background: rgba(200,160,169,1)}
 @-webkit-keyframes reset {
 	0% {
 		opacity: 0;
@@ -67,16 +68,16 @@ body {background-color: rgba(180,150,169,1);}
     -webkit-animation-name: reset, fade-in;
     -webkit-animation-duration: 1s;
     -webkit-animation-timing-function: ease-in;
-	
+
 	-moz-animation-name: reset, fade-in;
     -moz-animation-duration: 1s;
     -moz-animation-timing-function: ease-in;
-	
+
 	animation-name: reset, fade-in;
     animation-duration: 1s;
     animation-timing-function: ease-in;
 }
- 
+
  /* TODO::: Right now none of these delays work*/
 .delayOne {
 	-webkit-animation-delay: 0.75, 0.75s;
